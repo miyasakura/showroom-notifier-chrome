@@ -1,0 +1,42 @@
+{
+  "appName": {
+    "message": "SHOWROOM Broadcast Starting Notifications",
+    "description": "アプリ名"
+  },
+  "appDescription": {
+    "message": "It'll notify you when the virtual live space SHOWROOM (showroom) starts.",
+    "description": ""
+  },
+  "liveStart": {
+    "message": " is live!",
+    "description": ""
+  },
+  "fanroomEnter": {
+    "message": " have entered into the fan room",
+    "description": ""
+  },
+  "settingPageTitle": {
+    "message": "SHOWROOM Broadcast Starting Notifications Setting",
+    "description": ""
+  },
+  "settingNoFav": {
+    "message": "Notify when the broadcasting of a room you don't follow starts",
+    "description": ""
+  },
+  "settingNoFanRoom": {
+    "message": "Don't notify the entering of a Fan Room",
+    "description": ""
+  },
+  "settingRemain": {
+    "message": "Notifications should remain visible on screen until the user activates or dismisses the notification",
+    "description": ""
+  },
+  "settingSound": {
+    "message": "Enable notification sound",
+    "description": ""
+  },
+  "settingSave": {
+    "message": "Save",
+    "description": ""
+  }
+}

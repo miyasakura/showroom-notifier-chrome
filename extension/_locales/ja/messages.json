@@ -1,0 +1,43 @@
+{
+  "appName": {
+    "message": "SHOWROOM放送開始通知",
+    "description": "アプリ名"
+  },
+  "appDescription": {
+    "message": "仮想ライブ空間 SHOWROOM (ショールーム) のライブの開始をプッシュ通知します。",
+    "description": ""
+  },
+  "liveStart": {
+    "message": "の放送が開始されました",
+    "description": ""
+  },
+  "fanroomEnter": {
+    "message": "がファンルームに入室しました",
+    "description": ""
+  },
+  "settingPageTitle": {
+    "message": "SHOWROOM放送開始通知 設定",
+    "description": ""
+  },
+  "settingNoFav": {
+    "message": "フォローしていないルームの配信開始も通知する",
+    "description": ""
+  },
+  "settingNoFanRoom": {
+    "message": "ファンルームの入室を通知しない",
+    "description": ""
+  },
+  "settingRemain": {
+    "message": "通知を自動で閉じずにデスクトップに保持する",
+    "description": ""
+  },
+  "settingSound": {
+    "message": "通知音を鳴らす",
+    "description": ""
+  },
+  "settingSave": {
+    "message": "保存",
+    "description": ""
+  }
+}
+
