@@ -80,16 +80,15 @@ async function checkNewTalk() {
     const talks = await fetchTalks();
     talks.forEach((talk) => {
         const roomId = talk.room_id;
+        newNotifiedTalks[roomId] = currentTime();
         if (!items.followings[roomId] && !items.notifyAll) {
             return;
         }
-        newNotifiedTalks[roomId] = currentTime();
         if (notifiedTalks[roomId]) {
             return;
         }
         notifyTalk(roomId, talk.name);
     })
-    console.log(notifiedTalks)
     chrome.storage.local.set({notifiedTalks: newNotifiedTalks})
 }
 
