@@ -88,6 +88,7 @@ async function checkNewTalk() {
             return;
         }
         notifyTalk(roomId, talk.name);
+        notifiedTalks[roomId] = currentTime();
     })
     chrome.storage.local.set({notifiedTalks: newNotifiedTalks})
 }
