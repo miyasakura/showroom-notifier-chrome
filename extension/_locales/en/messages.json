@@ -11,7 +11,7 @@
     "message": " is live!",
     "description": ""
   },
-  "fanroomEnter": {
+  "talkEnter": {
     "message": " have entered into the fan room",
     "description": ""
   },
@@ -23,7 +23,7 @@
     "message": "Notify when the broadcasting of a room you don't follow starts",
     "description": ""
   },
-  "settingNoFanRoom": {
+  "settingNoTalk": {
     "message": "Don't notify the entering of a Fan Room",
     "description": ""
   },
