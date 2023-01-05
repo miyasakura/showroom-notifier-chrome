@@ -100,7 +100,7 @@ async function updateFollowings() {
 }
 
 chrome.alarms.create("check", {periodInMinutes: 1});
-chrome.alarms.create("update", {periodInMinutes: 60});
+chrome.alarms.create("update", {periodInMinutes: 15});
 
 chrome.alarms.onAlarm.addListener((alarm) => {
     if (alarm.name === 'check') {
