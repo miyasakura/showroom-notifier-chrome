@@ -6,7 +6,7 @@ export function currentTime() {
     return parseInt(new Date / 1000);
 }
 
-export function notify(key, title, message, requireInteraction) {
+export async function notify(key, title, message, requireInteraction) {
     chrome.notifications.create(key, {
         type: 'basic',
         iconUrl: '/assets/img/icon38.png',
@@ -14,11 +14,12 @@ export function notify(key, title, message, requireInteraction) {
         message: message,
         requireInteraction: requireInteraction,
     });
-    playSound()
+    await playSound()
+    await wait(100)
 }
 
 export async function wait(ms) {
-    return await new Promise(resolve => setTimeout(resolve, 3000));
+    return await new Promise(resolve => setTimeout(resolve, ms));
 }
 
 async function playSound(source = '/assets/audio/croak.mp3', volume = 1) {
