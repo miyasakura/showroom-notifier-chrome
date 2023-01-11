@@ -26,13 +26,5 @@
   ],
   "host_permissions" : [
     "https://www.showroom-live.com/*"
-  ],
-  "externally_connectable": {
-    "matches": [
-      "https://bugs.chromium.org/p/chromium/issues/*"
-    ],
-    "ids": [
-      "*"
-    ]
-  }
+  ]
 }
