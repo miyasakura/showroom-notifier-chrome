@@ -3,7 +3,7 @@ export function l(key) {
 }
 
 export function currentTime() {
-    return parseInt(new Date / 1000);
+    return Math.floor(new Date().getTime() / 1000);
 }
 
 export async function notify(key, title, message, requireInteraction) {

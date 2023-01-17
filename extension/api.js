@@ -18,8 +18,8 @@ export async function fetchFollowingRoomIds() {
     let page = 1;
     const followings = []
     while (true) {
-        const respone = await fetch(BASE_URL + `/follow/rooms?page=${page}&count=90`)
-        const json = await respone.json();
+        const response = await fetch(BASE_URL + `/follow/rooms?page=${page}&count=90`)
+        const json = await response.json();
         if(!json.rooms) {
             break;
         }
@@ -28,7 +28,7 @@ export async function fetchFollowingRoomIds() {
             break;
         }
         page += 1;
-        wait(3000)
+        await wait(3000)
     }
 
     return followings;
