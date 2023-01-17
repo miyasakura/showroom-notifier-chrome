@@ -11,7 +11,7 @@
     "message": "の放送が開始されました",
     "description": ""
   },
-  "fanroomEnter": {
+  "talkEnter": {
     "message": "がファンルームに入室しました",
     "description": ""
   },
@@ -19,11 +19,11 @@
     "message": "SHOWROOM放送開始通知 設定",
     "description": ""
   },
-  "settingNoFav": {
+  "settingNotifyAll": {
     "message": "フォローしていないルームの配信開始も通知する",
     "description": ""
   },
-  "settingNoFanRoom": {
+  "settingNoTalk": {
     "message": "ファンルームの入室を通知しない",
     "description": ""
   },
