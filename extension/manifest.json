@@ -21,7 +21,6 @@
     "alarms",
     "notifications",
     "storage",
-    "tabs",
     "offscreen"
   ],
   "host_permissions" : [
