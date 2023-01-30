@@ -32,7 +32,7 @@
     "description": ""
   },
   "settingSound": {
-    "message": "Enable notification sound",
+    "message": "Disable notification sound",
     "description": ""
   },
   "settingSave": {

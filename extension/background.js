@@ -4,21 +4,25 @@ import {fetchFollowingRoomIds, fetchLives, fetchTalks} from "./api.js";
 const TYPE_LIVE = '1';
 const TYPE_TALK = '2';
 
-function notifyLive(id, key, name) {
+function notifyLive(id, key, name, requireInteraction, noSound) {
     console.debug('notifyLive', id, key, name);
     notify(
         `${TYPE_LIVE}:${key}:${id}`,
         name + l('liveStart'),
-        name + l('liveStart')
+        name + l('liveStart'),
+        requireInteraction,
+        noSound
     )
 }
 
-function notifyTalk(roomId, name) {
+function notifyTalk(roomId, name, requireInteraction, noSound) {
     console.debug('notifyTalk', roomId);
     notify(
         `${TYPE_TALK}:${roomId}:${currentTime()}`,
         name + l('talkEnter'),
-        name + l('talkEnter')
+        name + l('talkEnter'),
+        requireInteraction,
+        noSound
     );
 }
 
@@ -48,7 +52,7 @@ async function expireNotifiedLives() {
 
 async function checkNewLive() {
     console.debug('checkNewLive')
-    const items = await chrome.storage.local.get(['notifiedLives', 'notifyAll', 'followings'])
+    const items = await chrome.storage.local.get(['notifiedLives', 'notifyAll', 'followings', 'remain', 'noSound'])
     const expire = currentTime() - 60 - 600;
     const notifiedLives = items.notifiedLives;
     const lives = await fetchLives();
@@ -64,14 +68,14 @@ async function checkNewLive() {
             return;
         }
         notifiedLives[live.live_id] = currentTime();
-        notifyLive(live.live_id, live.room_url_key, live.main_name);
+        notifyLive(live.live_id, live.room_url_key, live.main_name, items.remain, items.noSound);
     })
     chrome.storage.local.set({notifiedLives})
 }
 
 async function checkNewTalk() {
     console.debug('checkNewTalk')
-    const items = await chrome.storage.local.get(['notifiedTalks', 'notifyAll', 'followings', 'noTalk'])
+    const items = await chrome.storage.local.get(['notifiedTalks', 'notifyAll', 'followings', 'noTalk', 'remain', 'noSound'])
     const notifiedTalks = items.notifiedTalks;
     const newNotifiedTalks = {}
     if (items.noTalk) {
@@ -87,7 +91,7 @@ async function checkNewTalk() {
         if (notifiedTalks[roomId]) {
             return;
         }
-        notifyTalk(roomId, talk.name);
+        notifyTalk(roomId, talk.name, items.remain, items.noSound);
         notifiedTalks[roomId] = currentTime();
     })
     chrome.storage.local.set({notifiedTalks: newNotifiedTalks})

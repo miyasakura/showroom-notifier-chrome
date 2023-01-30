@@ -32,7 +32,7 @@
     "description": ""
   },
   "settingSound": {
-    "message": "通知音を鳴らす",
+    "message": "通知音を鳴らさない",
     "description": ""
   },
   "settingSave": {

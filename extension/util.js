@@ -6,15 +6,17 @@ export function currentTime() {
     return Math.floor(new Date().getTime() / 1000);
 }
 
-export async function notify(key, title, message, requireInteraction) {
+export async function notify(key, title, message, requireInteraction, noSound) {
     chrome.notifications.create(key, {
         type: 'basic',
         iconUrl: '/assets/img/icon38.png',
         title: title,
         message: message,
-        requireInteraction: requireInteraction,
+        // requireInteraction: requireInteraction,
     });
-    await playSound()
+    if(!noSound) {
+        await playSound()
+    }
     await wait(100)
 }
 

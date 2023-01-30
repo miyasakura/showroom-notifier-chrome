@@ -5,7 +5,8 @@ function saveOptions() {
     const notifyAll = document.querySelector('#notifyAll').checked;
     const noTalk = document.querySelector('#noTalk').checked;
     const remain = document.querySelector('#remain').checked;
-    chrome.storage.local.set({notifyAll, noTalk, remain})
+    const noSound = document.querySelector('#noSound').checked;
+    chrome.storage.local.set({notifyAll, noTalk, remain, noSound})
 
     document.querySelector('#status').innerHTML = 'Options Saved.';
     setTimeout((function () {
@@ -14,10 +15,11 @@ function saveOptions() {
 }
 
 async function restoreOptions() {
-    const items = await chrome.storage.local.get(['notifyAll', 'noTalk', 'remain']);
+    const items = await chrome.storage.local.get(['notifyAll', 'noTalk', 'remain', 'noSound']);
     document.querySelector('#notifyAll').checked = items.notifyAll;
     document.querySelector('#noTalk').checked = items.noTalk;
     document.querySelector('#remain').checked = items.remain;
+    document.querySelector('#noSound').checked = items.noSound;
 }
 
 function localize() {
@@ -25,6 +27,7 @@ function localize() {
     document.querySelector("#notifyAllLabel").innerHTML = l("settingNotifyAll");
     document.querySelector("#noTalkLabel").innerHTML = l("settingNoTalk");
     document.querySelector("#remainLabel").innerHTML = l("settingRemain");
+    document.querySelector("#noSoundLabel").innerHTML = l("settingSound");
     document.querySelector("#save").innerHTML = l("settingSave");
 }
 
